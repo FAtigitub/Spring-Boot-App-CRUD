@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des créateurs</title>
+</head>
+<body>
+<a th:href="@{/add}" ><h3>Ajouter un créateur</h3></a>
+<h1>Liste des créateurs</h1>
+<table >
+    <thead>
+    <tr>
+        <td>Ref</td>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Utilisation de Thymeleaf pour parcourir la liste des créateurs -->
+    <tr th:each="creator : ${listcreators}">
+        <td > <a th:href="@{detailCreator(id=${creator.getId()})}"
+                 th:text="${creator.getId()}"></a></td>
+
+
+        <td th:text="${creator.name}">Nom</td>
+        <td th:text="${creator.email}">Email</td>
+        <td>
+            <!-- Utilisation de Thymeleaf pour créer les liens de mise à jour et de suppression -->
+            <a th:href="@{/update/{id}(id=${creator.id})}">Modifier</a>
+            <a th:href="@{/delete/{id}(id=${creator.id})}">Supprimer</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

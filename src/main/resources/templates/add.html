@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un créateur</title>
+</head>
+<body>
+<h1>Ajouter un créateur</h1>
+<form action="#" th:action="@{/add}" method="post">
+    <label for="name">Nom:</label><br>
+    <input type="text" id="name" name="name" th:field="${creator.name}" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" th:field="${creator.email}" required><br><br>
+    <input type="submit" value="Ajouter">
+</form>
+</body>
+</html>

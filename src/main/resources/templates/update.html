@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un créateur</title>
+</head>
+<body>
+<h1>Modifier un créateur</h1>
+<form action="#" th:action="@{/update/{id}(id=${creator.id})}" method="post">
+    <label for="name">Nom:</label><br>
+    <input type="text" id="name" name="name" th:value="${creator.name}"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" th:value="${creator.email}"><br><br>
+    <input type="submit" value="Modifier">
+</form>
+</body>
+</html>
